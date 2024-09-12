@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A112975C2C9318480091D203 /* DriveScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A112975B2C9318480091D203 /* DriveScoreView.swift */; };
+		A112975E2C931B510091D203 /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A112975D2C931B510091D203 /* VideoPlayView.swift */; };
 		CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */; };
 		CE6CDACD2C92EEE7005F7792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDACC2C92EEE7005F7792 /* ContentView.swift */; };
 		CE6CDACF2C92EEE7005F7792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6CDACE2C92EEE7005F7792 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		A112975B2C9318480091D203 /* DriveScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveScoreView.swift; sourceTree = "<group>"; };
+		A112975D2C931B510091D203 /* VideoPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayView.swift; sourceTree = "<group>"; };
 		CE6CDAC72C92EEE7005F7792 /* kaizen-fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kaizen-fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaizen_fitnessApp.swift; sourceTree = "<group>"; };
 		CE6CDACC2C92EEE7005F7792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */,
 				CE6CDACC2C92EEE7005F7792 /* ContentView.swift */,
 				A112975B2C9318480091D203 /* DriveScoreView.swift */,
+				A112975D2C931B510091D203 /* VideoPlayView.swift */,
 				CE6CDACE2C92EEE7005F7792 /* Assets.xcassets */,
 				CE6CDAD02C92EEE7005F7792 /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				CE6CDACD2C92EEE7005F7792 /* ContentView.swift in Sources */,
 				CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */,
+				A112975E2C931B510091D203 /* VideoPlayView.swift in Sources */,
 				A112975C2C9318480091D203 /* DriveScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
