@@ -7,22 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A112975C2C9318480091D203 /* DriveScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A112975B2C9318480091D203 /* DriveScoreView.swift */; };
-		A112975E2C931B510091D203 /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A112975D2C931B510091D203 /* VideoPlayView.swift */; };
 		CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */; };
 		CE6CDACD2C92EEE7005F7792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDACC2C92EEE7005F7792 /* ContentView.swift */; };
 		CE6CDACF2C92EEE7005F7792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6CDACE2C92EEE7005F7792 /* Assets.xcassets */; };
 		CE6CDAD22C92EEE7005F7792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6CDAD12C92EEE7005F7792 /* Preview Assets.xcassets */; };
+		CE988D212C932B0900BC7E5C /* DriveScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D1F2C932B0900BC7E5C /* DriveScoreView.swift */; };
+		CE988D222C932B0900BC7E5C /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D202C932B0900BC7E5C /* VideoPlayView.swift */; };
+		CE988D242C932B6600BC7E5C /* SelectPlanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D232C932B6600BC7E5C /* SelectPlanScreen.swift */; };
+		CE988D282C932E1C00BC7E5C /* buttonStyle+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D252C932E1C00BC7E5C /* buttonStyle+View.swift */; };
+		CE988D292C932E1C00BC7E5C /* cardStyle+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D262C932E1C00BC7E5C /* cardStyle+View.swift */; };
+		CE988D2B2C932E7200BC7E5C /* DriveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE988D2A2C932E7200BC7E5C /* DriveScreen.swift */; };
+		CE988D2F2C9330DD00BC7E5C /* car.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE988D2E2C9330DD00BC7E5C /* car.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A112975B2C9318480091D203 /* DriveScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveScoreView.swift; sourceTree = "<group>"; };
-		A112975D2C931B510091D203 /* VideoPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayView.swift; sourceTree = "<group>"; };
 		CE6CDAC72C92EEE7005F7792 /* kaizen-fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kaizen-fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaizen_fitnessApp.swift; sourceTree = "<group>"; };
 		CE6CDACC2C92EEE7005F7792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE6CDACE2C92EEE7005F7792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6CDAD12C92EEE7005F7792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE988D1F2C932B0900BC7E5C /* DriveScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DriveScoreView.swift; path = "../../ipad/kaizen-fitness/kaizen-fitness/DriveScoreView.swift"; sourceTree = "<group>"; };
+		CE988D202C932B0900BC7E5C /* VideoPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayView.swift; path = "../../ipad/kaizen-fitness/kaizen-fitness/VideoPlayView.swift"; sourceTree = "<group>"; };
+		CE988D232C932B6600BC7E5C /* SelectPlanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanScreen.swift; sourceTree = "<group>"; };
+		CE988D252C932E1C00BC7E5C /* buttonStyle+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "buttonStyle+View.swift"; sourceTree = "<group>"; };
+		CE988D262C932E1C00BC7E5C /* cardStyle+View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "cardStyle+View.swift"; sourceTree = "<group>"; };
+		CE988D2A2C932E7200BC7E5C /* DriveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveScreen.swift; sourceTree = "<group>"; };
+		CE988D2E2C9330DD00BC7E5C /* car.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = car.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +67,13 @@
 			children = (
 				CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */,
 				CE6CDACC2C92EEE7005F7792 /* ContentView.swift */,
-				A112975B2C9318480091D203 /* DriveScoreView.swift */,
-				A112975D2C931B510091D203 /* VideoPlayView.swift */,
+				CE988D232C932B6600BC7E5C /* SelectPlanScreen.swift */,
+				CE988D2A2C932E7200BC7E5C /* DriveScreen.swift */,
+				CE988D202C932B0900BC7E5C /* VideoPlayView.swift */,
+				CE988D1F2C932B0900BC7E5C /* DriveScoreView.swift */,
+				CE988D272C932E1C00BC7E5C /* Style */,
 				CE6CDACE2C92EEE7005F7792 /* Assets.xcassets */,
+				CE988D2E2C9330DD00BC7E5C /* car.gif */,
 				CE6CDAD02C92EEE7005F7792 /* Preview Content */,
 			);
 			path = "kaizen-fitness";
@@ -71,6 +85,15 @@
 				CE6CDAD12C92EEE7005F7792 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CE988D272C932E1C00BC7E5C /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				CE988D252C932E1C00BC7E5C /* buttonStyle+View.swift */,
+				CE988D262C932E1C00BC7E5C /* cardStyle+View.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE988D2F2C9330DD00BC7E5C /* car.gif in Resources */,
 				CE6CDAD22C92EEE7005F7792 /* Preview Assets.xcassets in Resources */,
 				CE6CDACF2C92EEE7005F7792 /* Assets.xcassets in Resources */,
 			);
@@ -145,8 +169,12 @@
 			files = (
 				CE6CDACD2C92EEE7005F7792 /* ContentView.swift in Sources */,
 				CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */,
-				A112975E2C931B510091D203 /* VideoPlayView.swift in Sources */,
-				A112975C2C9318480091D203 /* DriveScoreView.swift in Sources */,
+				CE988D222C932B0900BC7E5C /* VideoPlayView.swift in Sources */,
+				CE988D212C932B0900BC7E5C /* DriveScoreView.swift in Sources */,
+				CE988D282C932E1C00BC7E5C /* buttonStyle+View.swift in Sources */,
+				CE988D292C932E1C00BC7E5C /* cardStyle+View.swift in Sources */,
+				CE988D2B2C932E7200BC7E5C /* DriveScreen.swift in Sources */,
+				CE988D242C932B6600BC7E5C /* SelectPlanScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

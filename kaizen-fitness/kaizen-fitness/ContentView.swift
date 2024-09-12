@@ -11,6 +11,20 @@ import MapKit
 struct ContentView: View {
     var body: some View {
         TabView {
+            SelectPlanScreen()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "filemenu.and.selection")
+                        Text("Plan")
+                    }
+                }
+            DriveScreen(gifName: "car", minimumInterval: 0.05)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "car.fill")
+                        Text("Drive")
+                    }
+                }
             Map {
                 
             }
