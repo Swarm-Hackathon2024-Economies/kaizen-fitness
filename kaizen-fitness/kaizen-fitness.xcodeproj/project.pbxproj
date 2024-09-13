@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B8BEDA92C946E98000A4809 /* CarPlayHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */; };
 		CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */; };
 		CE6CDACD2C92EEE7005F7792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDACC2C92EEE7005F7792 /* ContentView.swift */; };
 		CE6CDACF2C92EEE7005F7792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6CDACE2C92EEE7005F7792 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayHome.swift; sourceTree = "<group>"; };
 		CE6CDAC72C92EEE7005F7792 /* kaizen-fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kaizen-fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaizen_fitnessApp.swift; sourceTree = "<group>"; };
 		CE6CDACC2C92EEE7005F7792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				CE6CDACE2C92EEE7005F7792 /* Assets.xcassets */,
 				CE988D2E2C9330DD00BC7E5C /* car.gif */,
 				CE6CDAD02C92EEE7005F7792 /* Preview Content */,
+				7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */,
 			);
 			path = "kaizen-fitness";
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				CE988D222C932B0900BC7E5C /* VideoPlayView.swift in Sources */,
 				CE988D212C932B0900BC7E5C /* DriveScoreView.swift in Sources */,
 				CE988D282C932E1C00BC7E5C /* buttonStyle+View.swift in Sources */,
+				7B8BEDA92C946E98000A4809 /* CarPlayHome.swift in Sources */,
 				CE988D292C932E1C00BC7E5C /* cardStyle+View.swift in Sources */,
 				CE988D2B2C932E7200BC7E5C /* DriveScreen.swift in Sources */,
 				CE988D242C932B6600BC7E5C /* SelectPlanScreen.swift in Sources */,
@@ -316,6 +320,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -345,6 +350,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
