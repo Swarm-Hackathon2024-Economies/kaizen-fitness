@@ -25,15 +25,13 @@ struct ContentView: View {
                         Text("Drive")
                     }
                 }
-            Map {
-                
-            }
-            .tabItem {
-                VStack {
-                    Image(systemName: "flag.fill")
-                    Text("test")
+            MapView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "flag.fill")
+                        Text("test")
+                    }
                 }
-            }
             VideoPlayView(videoID: "hge3fr50o0o")
                 .frame(height: 300)
                 .cornerRadius(12)

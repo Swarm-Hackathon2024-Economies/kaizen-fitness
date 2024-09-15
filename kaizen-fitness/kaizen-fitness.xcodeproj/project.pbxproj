@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7B8BEDA92C946E98000A4809 /* CarPlayHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */; };
+		7BA2E7062C97134800CA90E3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7052C97134800CA90E3 /* MapView.swift */; };
+		7BA2E7082C9734A500CA90E3 /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7072C9734A500CA90E3 /* ItemInfoView.swift */; };
+		7BA2E70A2C9734D500CA90E3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7092C9734D500CA90E3 /* LocationManager.swift */; };
 		A1B156DF2C9544F100A1B969 /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B156DE2C9544F100A1B969 /* VideoPlayView.swift */; };
 		A1B156E12C9545CB00A1B969 /* DriveScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B156E02C9545CB00A1B969 /* DriveScoreView.swift */; };
 		CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CDACA2C92EEE7005F7792 /* kaizen_fitnessApp.swift */; };
@@ -23,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayHome.swift; sourceTree = "<group>"; };
+		7BA2E7052C97134800CA90E3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		7BA2E7072C9734A500CA90E3 /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
+		7BA2E7092C9734D500CA90E3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A1B156DE2C9544F100A1B969 /* VideoPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayView.swift; sourceTree = "<group>"; };
 		A1B156E02C9545CB00A1B969 /* DriveScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveScoreView.swift; sourceTree = "<group>"; };
 		CE6CDAC72C92EEE7005F7792 /* kaizen-fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kaizen-fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +84,9 @@
 				CE988D2E2C9330DD00BC7E5C /* car.gif */,
 				CE6CDAD02C92EEE7005F7792 /* Preview Content */,
 				7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */,
+				7BA2E7052C97134800CA90E3 /* MapView.swift */,
+				7BA2E7072C9734A500CA90E3 /* ItemInfoView.swift */,
+				7BA2E7092C9734D500CA90E3 /* LocationManager.swift */,
 			);
 			path = "kaizen-fitness";
 			sourceTree = "<group>";
@@ -170,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BA2E7082C9734A500CA90E3 /* ItemInfoView.swift in Sources */,
 				CE6CDACD2C92EEE7005F7792 /* ContentView.swift in Sources */,
 				CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */,
 				A1B156E12C9545CB00A1B969 /* DriveScoreView.swift in Sources */,
@@ -177,6 +187,8 @@
 				7B8BEDA92C946E98000A4809 /* CarPlayHome.swift in Sources */,
 				CE988D292C932E1C00BC7E5C /* cardStyle+View.swift in Sources */,
 				CE988D2B2C932E7200BC7E5C /* DriveScreen.swift in Sources */,
+				7BA2E70A2C9734D500CA90E3 /* LocationManager.swift in Sources */,
+				7BA2E7062C97134800CA90E3 /* MapView.swift in Sources */,
 				A1B156DF2C9544F100A1B969 /* VideoPlayView.swift in Sources */,
 				CE988D242C932B6600BC7E5C /* SelectPlanScreen.swift in Sources */,
 			);
@@ -315,6 +327,9 @@
 				DEVELOPMENT_TEAM = LANULV72W5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses location.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app uses location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -345,6 +360,9 @@
 				DEVELOPMENT_TEAM = LANULV72W5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app uses location.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app uses location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
