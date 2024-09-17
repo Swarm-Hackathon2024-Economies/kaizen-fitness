@@ -33,7 +33,6 @@ struct ContentView: View {
                     }
                 }
             VideoPlayView(videoID: "hge3fr50o0o")
-                .frame(height: 300)
                 .cornerRadius(12)
                 .shadow(radius: 5)
                 .tabItem {
