@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B32C5AA2CA2B55900CC4A5E /* ToyotaNaviSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */; };
+		7B32C5AC2CA2CFF900CC4A5E /* SelectPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */; };
 		7B8BEDA92C946E98000A4809 /* CarPlayHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */; };
 		7BA2E7062C97134800CA90E3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7052C97134800CA90E3 /* MapView.swift */; };
 		7BA2E7082C9734A500CA90E3 /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7072C9734A500CA90E3 /* ItemInfoView.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyotaNaviSidebar.swift; sourceTree = "<group>"; };
+		7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanView.swift; sourceTree = "<group>"; };
 		7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayHome.swift; sourceTree = "<group>"; };
 		7BA2E7052C97134800CA90E3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		7BA2E7072C9734A500CA90E3 /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				A16A7DB52C9DA792000A9737 /* ShoutView.swift */,
 				7BA2E7072C9734A500CA90E3 /* ItemInfoView.swift */,
 				7BA2E7092C9734D500CA90E3 /* LocationManager.swift */,
+				7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */,
+				7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */,
 			);
 			path = "kaizen-fitness";
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BA2E7082C9734A500CA90E3 /* ItemInfoView.swift in Sources */,
+				7B32C5AC2CA2CFF900CC4A5E /* SelectPlanView.swift in Sources */,
 				CE6CDACD2C92EEE7005F7792 /* ContentView.swift in Sources */,
 				CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */,
 				A1B156E12C9545CB00A1B969 /* DriveScoreView.swift in Sources */,
@@ -192,6 +199,7 @@
 				CE988D292C932E1C00BC7E5C /* cardStyle+View.swift in Sources */,
 				CE988D2B2C932E7200BC7E5C /* DriveScreen.swift in Sources */,
 				7BA2E70A2C9734D500CA90E3 /* LocationManager.swift in Sources */,
+				7B32C5AA2CA2B55900CC4A5E /* ToyotaNaviSidebar.swift in Sources */,
 				7BA2E7062C97134800CA90E3 /* MapView.swift in Sources */,
 				A1B156DF2C9544F100A1B969 /* VideoPlayView.swift in Sources */,
 				CE988D242C932B6600BC7E5C /* SelectPlanScreen.swift in Sources */,
