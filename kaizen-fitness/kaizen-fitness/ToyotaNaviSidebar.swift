@@ -13,7 +13,7 @@ struct ToyotaNaviSidebar: ViewModifier {
     
     func body(content: Content) -> some View {
         GeometryReader { geometry in
-            HStack {
+            HStack(spacing: 0) {
                 sidebar(width: geometry.size.width / 12)
                 content
             }

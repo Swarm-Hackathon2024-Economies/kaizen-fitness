@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		7B32C5AA2CA2B55900CC4A5E /* ToyotaNaviSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */; };
 		7B32C5AC2CA2CFF900CC4A5E /* SelectPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */; };
+		7B895FA22CA40E1100C9126F /* RouteNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B895FA12CA40E1100C9126F /* RouteNavigationView.swift */; };
 		7B8BEDA92C946E98000A4809 /* CarPlayHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */; };
 		7BA2E7062C97134800CA90E3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7052C97134800CA90E3 /* MapView.swift */; };
 		7BA2E7082C9734A500CA90E3 /* ItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7072C9734A500CA90E3 /* ItemInfoView.swift */; };
 		7BA2E70A2C9734D500CA90E3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7092C9734D500CA90E3 /* LocationManager.swift */; };
+		7BC0E2A12CA86F6A00BB4A6D /* DriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0E2A02CA86F6A00BB4A6D /* DriveView.swift */; };
+		7BC0E2A32CA8733000BB4A6D /* NextActivituCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0E2A22CA8733000BB4A6D /* NextActivituCard.swift */; };
 		A16A7DB62C9DA792000A9737 /* ShoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A7DB52C9DA792000A9737 /* ShoutView.swift */; };
 		A1B156DF2C9544F100A1B969 /* VideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B156DE2C9544F100A1B969 /* VideoPlayView.swift */; };
 		A1B156E12C9545CB00A1B969 /* DriveScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B156E02C9545CB00A1B969 /* DriveScoreView.swift */; };
@@ -30,10 +33,13 @@
 /* Begin PBXFileReference section */
 		7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyotaNaviSidebar.swift; sourceTree = "<group>"; };
 		7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanView.swift; sourceTree = "<group>"; };
+		7B895FA12CA40E1100C9126F /* RouteNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteNavigationView.swift; sourceTree = "<group>"; };
 		7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayHome.swift; sourceTree = "<group>"; };
 		7BA2E7052C97134800CA90E3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		7BA2E7072C9734A500CA90E3 /* ItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoView.swift; sourceTree = "<group>"; };
 		7BA2E7092C9734D500CA90E3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7BC0E2A02CA86F6A00BB4A6D /* DriveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveView.swift; sourceTree = "<group>"; };
+		7BC0E2A22CA8733000BB4A6D /* NextActivituCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextActivituCard.swift; sourceTree = "<group>"; };
 		A16A7DB52C9DA792000A9737 /* ShoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoutView.swift; sourceTree = "<group>"; };
 		A1B156DE2C9544F100A1B969 /* VideoPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayView.swift; sourceTree = "<group>"; };
 		A1B156E02C9545CB00A1B969 /* DriveScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveScoreView.swift; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 		CE6CDABE2C92EEE7005F7792 = {
 			isa = PBXGroup;
 			children = (
+				7BC0E2A22CA8733000BB4A6D /* NextActivituCard.swift */,
 				CE6CDAC92C92EEE7005F7792 /* kaizen-fitness */,
 				CE6CDAC82C92EEE7005F7792 /* Products */,
 			);
@@ -96,6 +103,8 @@
 				7BA2E7092C9734D500CA90E3 /* LocationManager.swift */,
 				7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */,
 				7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */,
+				7B895FA12CA40E1100C9126F /* RouteNavigationView.swift */,
+				7BC0E2A02CA86F6A00BB4A6D /* DriveView.swift */,
 			);
 			path = "kaizen-fitness";
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 				7BA2E7082C9734A500CA90E3 /* ItemInfoView.swift in Sources */,
 				7B32C5AC2CA2CFF900CC4A5E /* SelectPlanView.swift in Sources */,
 				CE6CDACD2C92EEE7005F7792 /* ContentView.swift in Sources */,
+				7BC0E2A12CA86F6A00BB4A6D /* DriveView.swift in Sources */,
 				CE6CDACB2C92EEE7005F7792 /* kaizen_fitnessApp.swift in Sources */,
 				A1B156E12C9545CB00A1B969 /* DriveScoreView.swift in Sources */,
 				CE988D282C932E1C00BC7E5C /* buttonStyle+View.swift in Sources */,
@@ -202,7 +212,9 @@
 				7B32C5AA2CA2B55900CC4A5E /* ToyotaNaviSidebar.swift in Sources */,
 				7BA2E7062C97134800CA90E3 /* MapView.swift in Sources */,
 				A1B156DF2C9544F100A1B969 /* VideoPlayView.swift in Sources */,
+				7B895FA22CA40E1100C9126F /* RouteNavigationView.swift in Sources */,
 				CE988D242C932B6600BC7E5C /* SelectPlanScreen.swift in Sources */,
+				7BC0E2A32CA8733000BB4A6D /* NextActivituCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
