@@ -7,6 +7,9 @@ struct FitnessPlan: Identifiable {
     let duration: DurationRange
     let effectiveBodyParts: [BodyPart]
     let musicTitle: String
+    let destinationName: String = ""
+    let destinationLatitude: Float = 0
+    let destinationLongitude: Float = 0
     
     enum FitnessType: String {
         case stretch = "Stretch"
