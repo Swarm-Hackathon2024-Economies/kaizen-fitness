@@ -6,7 +6,7 @@ struct ContentView: View {
         if UIDevice.current.userInterfaceIdiom == .phone {
             IOSHomeScreen()
         } else if UIDevice.current.userInterfaceIdiom == .pad {
-            SelectPlanView()
+            iPadHomeScreen()
         }
     }
 }

@@ -4,8 +4,9 @@ import Charts
 
 
 struct DriveView: View {
+    let fitnessPlan: FitnessPlan
     @State private var sidebarSelection: ToyotaNaviSidebar.Item = .map
-    @State private var activityIsInProgress: Bool = false
+    @State private var activityIsInProgress: Bool = true
     
     var body: some View {
         GeometryReader { geometry in
@@ -30,7 +31,7 @@ struct DriveView: View {
     var nextActivityCards: some View {
         VStack {
             NextActivituCard(
-                title: "1. Neck stretch activity",
+                title: "1. \(fitnessPlan.title)",
                 distance: 10,
                 imageName: "NeckStretch",
                 progress: 0.4
@@ -43,6 +44,8 @@ struct DriveView: View {
             )
         }
     }
+    
+    @State private var activityRemainingTime: Int = 10
     
     func activityView(width: CGFloat) -> some View {
         Image("NeckStretch")
@@ -77,14 +80,29 @@ struct DriveView: View {
                     }
                     ZStack {
                         Chart {
-                            SectorMark(angle: .value("Red", 4))
+                            SectorMark(angle: .value("", activityRemainingTime))
                                 .foregroundStyle(.gray)
-                            SectorMark(angle: .value("Green", 6))
+                            SectorMark(angle: .value("", 10 - activityRemainingTime))
                                 .foregroundStyle(.blue)
                         }
+                        .animation(.linear(duration: 1), value: activityRemainingTime)
                         .frame(width: 100, height: 100)
+                        .onAppear {
+                            activityRemainingTime -= 1
+                            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                                if activityRemainingTime > 0 {
+                                    activityRemainingTime -= 1
+                                } else {
+                                    var transaction = Transaction()
+                                    transaction.disablesAnimations = true
+                                    withTransaction(transaction) {
+                                        activityRemainingTime = 10
+                                    }
+                                }
+                            }
+                        }
                         
-                        Text("8")
+                        Text("\(activityRemainingTime)")
                             .font(.system(size: 70).bold())
                             .foregroundStyle(.white)
                             .shadow(color: .black.opacity(0.5), radius: 5, y: 5)
@@ -99,5 +117,13 @@ struct DriveView: View {
 }
 
 #Preview {
-    DriveView()
+    DriveView(
+        fitnessPlan: FitnessPlan(
+            title: "Neck stretch activity",
+            type: .stretch,
+            duration: .init(min: 5, max: 10),
+            effectiveBodyParts: [.arm, .face],
+            musicTitle: "Chill"
+        )
+    )
 }

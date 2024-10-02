@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7B16A1352CAD5D0900CD2B87 /* IOSHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A1342CAD5D0900CD2B87 /* IOSHomeScreen.swift */; };
+		7B16A1382CAD5ED100CD2B87 /* FitnessPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A1372CAD5ED100CD2B87 /* FitnessPlan.swift */; };
+		7B16A13A2CAD5F8100CD2B87 /* iPadHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A1392CAD5F8100CD2B87 /* iPadHomeScreen.swift */; };
 		7B32C5AA2CA2B55900CC4A5E /* ToyotaNaviSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */; };
 		7B32C5AC2CA2CFF900CC4A5E /* SelectPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */; };
 		7B895FA22CA40E1100C9126F /* RouteNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B895FA12CA40E1100C9126F /* RouteNavigationView.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		7B16A1342CAD5D0900CD2B87 /* IOSHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSHomeScreen.swift; sourceTree = "<group>"; };
+		7B16A1372CAD5ED100CD2B87 /* FitnessPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessPlan.swift; sourceTree = "<group>"; };
+		7B16A1392CAD5F8100CD2B87 /* iPadHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHomeScreen.swift; sourceTree = "<group>"; };
 		7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyotaNaviSidebar.swift; sourceTree = "<group>"; };
 		7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanView.swift; sourceTree = "<group>"; };
 		7B895FA12CA40E1100C9126F /* RouteNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteNavigationView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 				7BC0E2A02CA86F6A00BB4A6D /* DriveView.swift */,
 				7BC0E2A52CA90EA900BB4A6D /* Place.swift */,
 				7B895FA12CA40E1100C9126F /* RouteNavigationView.swift */,
+				7B16A1392CAD5F8100CD2B87 /* iPadHomeScreen.swift */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -105,6 +110,14 @@
 			path = spikes;
 			sourceTree = "<group>";
 		};
+		7B16A1362CAD5EC500CD2B87 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				7B16A1372CAD5ED100CD2B87 /* FitnessPlan.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		CE6CDABE2C92EEE7005F7792 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 		CE6CDAC92C92EEE7005F7792 /* kaizen-fitness */ = {
 			isa = PBXGroup;
 			children = (
+				7B16A1362CAD5EC500CD2B87 /* models */,
 				CE988D272C932E1C00BC7E5C /* Style */,
 				7B16A1332CAD5C7200CD2B87 /* spikes */,
 				7B16A1322CAD5BCC00CD2B87 /* iPhone */,
@@ -241,9 +255,11 @@
 				CE988D292C932E1C00BC7E5C /* cardStyle+View.swift in Sources */,
 				CE988D2B2C932E7200BC7E5C /* DriveScreen.swift in Sources */,
 				7BA2E70A2C9734D500CA90E3 /* LocationManager.swift in Sources */,
+				7B16A1382CAD5ED100CD2B87 /* FitnessPlan.swift in Sources */,
 				7B32C5AA2CA2B55900CC4A5E /* ToyotaNaviSidebar.swift in Sources */,
 				7BA2E7062C97134800CA90E3 /* MapView.swift in Sources */,
 				A1B156DF2C9544F100A1B969 /* VideoPlayView.swift in Sources */,
+				7B16A13A2CAD5F8100CD2B87 /* iPadHomeScreen.swift in Sources */,
 				7B895FA22CA40E1100C9126F /* RouteNavigationView.swift in Sources */,
 				CE988D242C932B6600BC7E5C /* SelectPlanScreen.swift in Sources */,
 				7BC0E2A32CA8733000BB4A6D /* NextActivituCard.swift in Sources */,

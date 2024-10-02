@@ -1,33 +1,5 @@
 import SwiftUI
 
-struct FitnessPlan: Identifiable {
-    let id = UUID()
-    let title: String
-    let type: FitnessType
-    let duration: DurationRange
-    let effectiveBodyParts: [BodyPart]
-    let musicTitle: String
-    let destinationName: String = ""
-    let destinationLatitude: Float = 0
-    let destinationLongitude: Float = 0
-    
-    enum FitnessType: String {
-        case stretch = "Stretch"
-        case relax = "Relax"
-    }
-    
-    struct DurationRange {
-        let min: Int
-        let max: Int
-    }
-    
-    enum BodyPart: String {
-        case neck = "Neck"
-        case shoulder = "Shoulder"
-        case arm = "Arm"
-        case face = "Face"
-    }
-}
 
 let fitnessPlans: [FitnessPlan] = [
     .init(
@@ -89,6 +61,7 @@ let fitnessPlans: [FitnessPlan] = [
 ]
 
 struct SelectPlanView: View {
+    @Binding var path: AppNavigationPath
     @State private var tabSelection: ToyotaNaviSidebar.Item = .map
     @State private var selectedPlan: FitnessPlan? = nil
     
@@ -174,7 +147,11 @@ struct SelectPlanView: View {
                 }
                 Spacer()
                 Button {
-                    
+                    var transaction = Transaction()
+                    transaction.disablesAnimations = true
+                    withTransaction(transaction) {
+                        path.append(.drive(fitnessPlan: plan))
+                    }
                 } label: {
                     Text("Set")
                         .font(.largeTitle.bold())
@@ -192,5 +169,5 @@ struct SelectPlanView: View {
 }
 
 #Preview {
-    SelectPlanView()
+    SelectPlanView(path: .constant(AppNavigationPath()))
 }
