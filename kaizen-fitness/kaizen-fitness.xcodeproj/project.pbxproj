@@ -12,6 +12,7 @@
 		7B16A13A2CAD5F8100CD2B87 /* iPadHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16A1392CAD5F8100CD2B87 /* iPadHomeScreen.swift */; };
 		7B32C5AA2CA2B55900CC4A5E /* ToyotaNaviSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */; };
 		7B32C5AC2CA2CFF900CC4A5E /* SelectPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */; };
+		7B75BD832CAED8F900734F85 /* MPCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B75BD822CAED8F900734F85 /* MPCSession.swift */; };
 		7B895FA22CA40E1100C9126F /* RouteNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B895FA12CA40E1100C9126F /* RouteNavigationView.swift */; };
 		7B8BEDA92C946E98000A4809 /* CarPlayHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */; };
 		7BA2E7062C97134800CA90E3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E7052C97134800CA90E3 /* MapView.swift */; };
@@ -40,6 +41,7 @@
 		7B16A1392CAD5F8100CD2B87 /* iPadHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHomeScreen.swift; sourceTree = "<group>"; };
 		7B32C5A92CA2B55900CC4A5E /* ToyotaNaviSidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyotaNaviSidebar.swift; sourceTree = "<group>"; };
 		7B32C5AB2CA2CFF900CC4A5E /* SelectPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanView.swift; sourceTree = "<group>"; };
+		7B75BD822CAED8F900734F85 /* MPCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCSession.swift; sourceTree = "<group>"; };
 		7B895FA12CA40E1100C9126F /* RouteNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteNavigationView.swift; sourceTree = "<group>"; };
 		7B8BEDA82C946E98000A4809 /* CarPlayHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayHome.swift; sourceTree = "<group>"; };
 		7BA2E7052C97134800CA90E3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				CE6CDACE2C92EEE7005F7792 /* Assets.xcassets */,
 				CE988D2E2C9330DD00BC7E5C /* car.gif */,
 				CE6CDAD02C92EEE7005F7792 /* Preview Content */,
+				7B75BD822CAED8F900734F85 /* MPCSession.swift */,
 			);
 			path = "kaizen-fitness";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				7B16A13A2CAD5F8100CD2B87 /* iPadHomeScreen.swift in Sources */,
 				7B895FA22CA40E1100C9126F /* RouteNavigationView.swift in Sources */,
 				CE988D242C932B6600BC7E5C /* SelectPlanScreen.swift in Sources */,
+				7B75BD832CAED8F900734F85 /* MPCSession.swift in Sources */,
 				7BC0E2A32CA8733000BB4A6D /* NextActivituCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

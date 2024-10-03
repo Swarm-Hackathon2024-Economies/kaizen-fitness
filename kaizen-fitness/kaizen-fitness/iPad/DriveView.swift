@@ -6,7 +6,7 @@ import Charts
 struct DriveView: View {
     let fitnessPlan: FitnessPlan
     @State private var sidebarSelection: ToyotaNaviSidebar.Item = .map
-    @State private var activityIsInProgress: Bool = true
+    @State private var activityIsInProgress: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
