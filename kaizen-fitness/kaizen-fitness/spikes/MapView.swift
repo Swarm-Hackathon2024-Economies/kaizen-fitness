@@ -24,7 +24,6 @@ struct MapView: View {
                     MapPolyline(route)
                         .stroke(.blue, lineWidth: 5)
                 }
-                
             }
             .mapStyle(.standard(elevation: .realistic))
             .onChange(of: searchResults) {

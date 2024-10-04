@@ -1,7 +1,7 @@
 import MultipeerConnectivity
 
 
-class MPCSession: NSObject, ObservableObject {
+class MCSessionManager: NSObject, ObservableObject {
     @Published var connectedPeerID: MCPeerID?
     @Published var receivedData: Data?
     
@@ -56,7 +56,7 @@ class MPCSession: NSObject, ObservableObject {
     }
 }
 
-extension MPCSession: MCSessionDelegate {
+extension MCSessionManager: MCSessionDelegate {
     internal func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         switch state {
         case .connected:
@@ -97,7 +97,7 @@ extension MPCSession: MCSessionDelegate {
     internal func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: (any Error)?) {}
 }
 
-extension MPCSession: MCNearbyServiceBrowserDelegate {
+extension MCSessionManager: MCNearbyServiceBrowserDelegate {
     internal func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         guard let identityValue = info?[identityKey] else { return }
         if identityValue == identity && mcSession.connectedPeers.count < maxNumPeers {
@@ -114,7 +114,7 @@ extension MPCSession: MCNearbyServiceBrowserDelegate {
     }
 }
 
-extension MPCSession: MCNearbyServiceAdvertiserDelegate {
+extension MCSessionManager: MCNearbyServiceAdvertiserDelegate {
     func advertiser(
         _ advertiser: MCNearbyServiceAdvertiser,
         didReceiveInvitationFromPeer peerID: MCPeerID,

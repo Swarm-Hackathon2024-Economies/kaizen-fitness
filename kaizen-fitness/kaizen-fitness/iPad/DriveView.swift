@@ -30,18 +30,17 @@ struct DriveView: View {
     
     var nextActivityCards: some View {
         VStack {
-            NextActivituCard(
-                title: "1. \(fitnessPlan.title)",
-                distance: 10,
-                imageName: "NeckStretch",
-                progress: 0.4
-            )
-            NextActivituCard(
-                title: "2. Shoulder stretch",
-                distance: 20,
-                imageName: "FitnessThumbnail",
-                progress: 0
-            )
+            ForEach(
+                Array(fitnessPlan.activities.enumerated().filter { $0.offset < 2 }),
+                id: \.offset
+            ) { offset, activity in
+                NextActivituCard(
+                    title: "\(offset + 1). \(activity.title)",
+                    distance: 10,
+                    imageName: "NeckStretch",
+                    progress: 0.4
+                )
+            }
         }
     }
     
@@ -117,13 +116,5 @@ struct DriveView: View {
 }
 
 #Preview {
-    DriveView(
-        fitnessPlan: FitnessPlan(
-            title: "Neck stretch activity",
-            type: .stretch,
-            duration: .init(min: 5, max: 10),
-            effectiveBodyParts: [.arm, .face],
-            musicTitle: "Chill"
-        )
-    )
+    DriveView(fitnessPlan: .toNadyaPark)
 }

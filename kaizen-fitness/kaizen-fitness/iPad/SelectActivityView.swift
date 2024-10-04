@@ -1,82 +1,31 @@
 import SwiftUI
 
 
-let fitnessPlans: [FitnessPlan] = [
-    .init(
-        title: "Shoulder Shrug and Roll",
-        type: .stretch,
-        duration: .init(min: 15, max: 30),
-        effectiveBodyParts: [.neck, .shoulder],
-        musicTitle: "Workout"
-    ),
-    .init(
-        title: "Seated Twist Stretch",
-        type: .stretch,
-        duration: .init(min: 20, max: 35),
-        effectiveBodyParts: [.arm, .shoulder],
-        musicTitle: "Relaxing"
-    ),
-    .init(
-        title: "Steering Wheel Push",
-        type: .relax,
-        duration: .init(min: 10, max: 15),
-        effectiveBodyParts: [.arm, .shoulder],
-        musicTitle: "Chil"
-    ),
-    .init(
-        title: "Seated Neck Roll",
-        type: .relax,
-        duration: .init(min: 30, max: 40),
-        effectiveBodyParts: [.neck, .face],
-        musicTitle: "Friday"
-    ),
-    .init(
-        title: "Shoulder Shrug and Roll",
-        type: .stretch,
-        duration: .init(min: 15, max: 30),
-        effectiveBodyParts: [.neck, .shoulder],
-        musicTitle: "Workout"
-    ),
-    .init(
-        title: "Seated Twist Stretch",
-        type: .stretch,
-        duration: .init(min: 20, max: 35),
-        effectiveBodyParts: [.arm, .shoulder],
-        musicTitle: "Relaxing"
-    ),
-    .init(
-        title: "Steering Wheel Push",
-        type: .relax,
-        duration: .init(min: 10, max: 15),
-        effectiveBodyParts: [.arm, .shoulder],
-        musicTitle: "Chil"
-    ),
-    .init(
-        title: "Seated Neck Roll",
-        type: .relax,
-        duration: .init(min: 30, max: 40),
-        effectiveBodyParts: [.neck, .face],
-        musicTitle: "Friday"
-    ),
-]
-
-struct SelectPlanView: View {
+struct SelectActivityView: View {
     @Binding var path: AppNavigationPath
     @State private var tabSelection: ToyotaNaviSidebar.Item = .map
-    @State private var selectedPlan: FitnessPlan? = nil
+    @State private var selectedActivity: Activity? = nil
+    let activities: [Activity] = [
+        .stretchesToRelieveShoulderAndNeckTension,
+        .shoulderShrugAndRoll,
+        .breathMethod,
+        .steeringWheelPush,
+        .seatedNeckRoll,
+        .shout,
+    ]
     
     var body: some View {
         HStack(spacing: 0) {
             ScrollView {
                 VStack {
-                    ForEach(fitnessPlans) { plan in
-                        planCard(of: plan)
+                    ForEach(activities, id: \.title) { activity in
+                        activityCard(of: activity)
                     }
                 }
                 .padding()
             }
-            if let selectedPlan {
-                planDetail(of: selectedPlan)
+            if let selectedActivity {
+                planDetail(of: selectedActivity)
                     .padding()
             } else {
                 Rectangle().fill(.gray)
@@ -86,28 +35,28 @@ struct SelectPlanView: View {
         .toyotaNaviSidebar(selection: $tabSelection)
     }
     
-    func planCard(of plan: FitnessPlan) -> some View {
+    func activityCard(of activity: Activity) -> some View {
         Button {
-            selectedPlan = plan
+            selectedActivity = activity
         } label: {
             HStack(spacing: 24) {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(.gray)
                     .frame(width: 100, height: 100)
                 VStack {
-                    Text(plan.title)
+                    Text(activity.title)
                         .font(.title.bold())
                         .foregroundStyle(.black)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Spacer()
                     HStack {
                         Spacer()
-                        Text(plan.type.rawValue)
+                        Text(activity.type.rawValue)
                             .font(.title2.bold())
                             .foregroundStyle(.white)
                             .padding(.vertical, 8)
                             .padding(.horizontal, 16)
-                            .background(RoundedRectangle(cornerRadius: 8).fill(plan.type == .stretch ? .green : .pink))
+                            .background(RoundedRectangle(cornerRadius: 8).fill(activity.type == .stretch ? .green : .pink))
                     }
                 }
             }
@@ -116,31 +65,31 @@ struct SelectPlanView: View {
         }
     }
     
-    func  planDetail(of plan: FitnessPlan) -> some View {
+    func  planDetail(of activity: Activity) -> some View {
         VStack {
             Image("FitnessThumbnail")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             VStack(spacing: 16) {
-                Text(plan.title).font(.title.bold())
+                Text(activity.title).font(.title.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
                 HStack {
                     VStack {
                         Image(systemName: "stopwatch").font(.title.bold())
-                        Text("\(plan.duration.min)~\(plan.duration.max)sec")
+                        Text("\(activity.duration.min)~\(activity.duration.max)sec")
                             .font(.title3.bold())
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                     VStack {
                         Image(systemName: "figure.strengthtraining.functional").font(.title.bold())
-                        Text(plan.effectiveBodyParts.map { $0.rawValue }.joined(separator: " ,"))
+                        Text(activity.effectiveBodyParts.map { $0.rawValue }.joined(separator: " ,"))
                             .font(.title3.bold())
                             .frame(maxWidth: .infinity)
                     }
                     VStack {
                         Image(systemName: "music.note").font(.title.bold())
-                        Text(plan.musicTitle)
+                        Text(activity.musicTitle)
                             .font(.title3.bold())
                             .frame(maxWidth: .infinity)
                     }
@@ -150,7 +99,7 @@ struct SelectPlanView: View {
                     var transaction = Transaction()
                     transaction.disablesAnimations = true
                     withTransaction(transaction) {
-                        path.append(.drive(fitnessPlan: plan))
+                        path.append(.drive(fitnessPlan: FitnessPlan.toNadyaPark))
                     }
                 } label: {
                     Text("Set")
@@ -169,5 +118,5 @@ struct SelectPlanView: View {
 }
 
 #Preview {
-    SelectPlanView(path: .constant(AppNavigationPath()))
+    SelectActivityView(path: .constant(AppNavigationPath()))
 }
