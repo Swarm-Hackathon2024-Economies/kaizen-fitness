@@ -6,11 +6,14 @@ struct IOSHomeScreen: View {
     var body: some View {
         VStack {
             Text("iOS Home")
+            if let peer = mcSessionManager.connectedPeerID {
+                Text(peer.displayName)
+            }
             
             Button {
                 sendFitnessPlan()
             } label: {
-                Text("ナディアパーク")
+                Text("ミッドランドスクエアに行くプランを送信")
             }
         }
         .onAppear {
@@ -22,7 +25,7 @@ struct IOSHomeScreen: View {
     }
     
     private func sendFitnessPlan() {
-        let fitnessPlan = FitnessPlan.toNadyaPark
+        let fitnessPlan = FitnessPlan.toMidlandSquare
         guard let data = try? JSONEncoder().encode(fitnessPlan) else { return }
         mcSessionManager.sendDataToAllPeers(data: data)
     }

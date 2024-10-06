@@ -2,14 +2,14 @@ import SwiftUI
 import MapKit
 
 
-struct MapView: View {
+struct SelectDestinationView: View {
+    @Binding var path: AppNavigationPath
     @State private var position: MapCameraPosition = .automatic
     @State private var visibleRegion: MKCoordinateRegion?
     @State private var searchResults: [MKMapItem] = []
     @State private var selectedResult: MKMapItem?
     @State private var route: MKRoute?
     @ObservedObject private var locationManager = LocationManager()
-    @State private var showSheet: Bool = true
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -25,12 +25,20 @@ struct MapView: View {
                         .stroke(.blue, lineWidth: 5)
                 }
             }
+//            .preferredColorScheme(.dark)
             .mapStyle(.standard(elevation: .realistic))
             .onChange(of: searchResults) {
-                position = .automatic
+                withAnimation {
+                    position = .automatic
+                }
             }
             .onChange(of: selectedResult) {
                 getDirections()
+            }
+            .onChange(of: locationManager.coordinate) { oldValue, newValue in
+                if oldValue != nil { return }
+                guard let center = newValue else { return }
+                position = .region(.init(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000))
             }
             .onMapCameraChange { context in
                 visibleRegion = context.region
@@ -43,13 +51,14 @@ struct MapView: View {
             
             GeometryReader { geometry in
                 HStack {
-                    SideBar(
+                    MapFloatingSideBar(
                         searchResults: $searchResults,
                         currentLocationCoordinate: locationManager.coordinate,
                         visibleRegion: visibleRegion,
                         selectedResult: $selectedResult
                     )
                     .frame(maxWidth: geometry.size.width / 3)
+                    .background(.regularMaterial)
                     .clipShape(RoundedRectangle(cornerRadius: 18))
                     .padding(.leading)
                     
@@ -58,7 +67,7 @@ struct MapView: View {
                     VStack {
                         Spacer()
                         if let selectedResult {
-                            ItemInfoView(selectedResult: selectedResult, route: route)
+                            DestinationSetButton(path: $path, selectedResult: selectedResult, route: route)
                                 .padding()
                                 .frame(width: geometry.size.width / 3, height: 100)
                         }
@@ -66,10 +75,11 @@ struct MapView: View {
                 }
             }
         }
+        .toyotaNaviSidebar(selection: .constant(.map))
         .onAppear {
             locationManager.requestLocation()
         }
-        .preferredColorScheme(.dark)
+//        .preferredColorScheme(.light)
     }
     
     func getDirections() {
@@ -87,54 +97,7 @@ struct MapView: View {
     }
 }
 
-struct SideBar: View {
-    @Binding var searchResults: [MKMapItem]
-    var currentLocationCoordinate: CLLocationCoordinate2D?
-    var visibleRegion: MKCoordinateRegion?
-    @Binding var selectedResult: MKMapItem?
-    @State private var searchText: String = ""
-    
-    var body: some View {
-        NavigationStack {
-            List {
-                ForEach(searchResults, id: \.self) { result in
-                    Button {
-                        selectedResult = result
-                    } label: {
-                        Text("\(result.name ?? "")")
-                    }
-                    .foregroundStyle(.white)
-                    .listRowBackground(selectedResult == result ? Color.blue : Color.black)
-                }
-            }
-        }
-        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-        .onSubmit(of: .search) {
-            search(for: searchText)
-        }
-    }
-    
-    func search(for query: String) {
-        guard let currentLocationCoordinate else { return }
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = query
-        request.resultTypes = .pointOfInterest
-        request.region = visibleRegion ?? MKCoordinateRegion(
-            center: currentLocationCoordinate,
-            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        )
-        
-        Task {
-            let search = MKLocalSearch(request: request)
-            let response = try? await search.start()
-            withAnimation {
-                searchResults = response?.mapItems ?? []
-            }
-        }
-    }
-}
-
 
 #Preview {
-    MapView()
+    SelectDestinationView(path: .constant(AppNavigationPath()))
 }

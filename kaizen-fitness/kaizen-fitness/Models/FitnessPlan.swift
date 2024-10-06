@@ -5,8 +5,8 @@ import MapKit
 struct FitnessPlan: Identifiable, Hashable, Codable {
     var id = UUID()
     let destinationName: String
-    let destinationLatitude: Float
-    let destinationLongitude: Float
+    let destinationLatitude: Double
+    let destinationLongitude: Double
     let activities: [Activity]
     
     static let toDaiNagoyaBuilding = {
@@ -14,6 +14,15 @@ struct FitnessPlan: Identifiable, Hashable, Codable {
             destinationName: "大名古屋ビルヂング",
             destinationLatitude: 35.172054987155555,
             destinationLongitude: 136.88456594373685,
+            activities: [.breathMethod, .seatedNeckRoll, .shout]
+        )
+    }()
+    
+    static let toMidlandSquare = {
+        FitnessPlan(
+            destinationName: "ミッドランドスクエア",
+            destinationLatitude: 35.17014092628169,
+            destinationLongitude: 136.8854005745826,
             activities: [.breathMethod, .seatedNeckRoll, .shout]
         )
     }()

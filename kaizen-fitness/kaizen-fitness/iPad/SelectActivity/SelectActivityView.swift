@@ -3,6 +3,7 @@ import SwiftUI
 
 struct SelectActivityView: View {
     @Binding var path: AppNavigationPath
+    let fitnessPlan: FitnessPlan
     @State private var tabSelection: ToyotaNaviSidebar.Item = .map
     @State private var selectedActivity: Activity? = nil
     let activities: [Activity] = [
@@ -99,7 +100,13 @@ struct SelectActivityView: View {
                     var transaction = Transaction()
                     transaction.disablesAnimations = true
                     withTransaction(transaction) {
-                        path.append(.drive(fitnessPlan: FitnessPlan.toNadyaPark))
+                        let newPlan = FitnessPlan(
+                            destinationName: fitnessPlan.destinationName,
+                            destinationLatitude: fitnessPlan.destinationLatitude,
+                            destinationLongitude: fitnessPlan.destinationLongitude,
+                            activities: [selectedActivity!, .seatedNeckRoll, .shoulderShrugAndRoll]
+                        )
+                        path.append(.drive(fitnessPlan: newPlan))
                     }
                 } label: {
                     Text("Set")
@@ -112,11 +119,12 @@ struct SelectActivityView: View {
             }
             .padding()
         }
+        .foregroundStyle(.black)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 24))
     }
 }
 
 #Preview {
-    SelectActivityView(path: .constant(AppNavigationPath()))
+    SelectActivityView(path: .constant(AppNavigationPath()), fitnessPlan: .toDaiNagoyaBuilding)
 }

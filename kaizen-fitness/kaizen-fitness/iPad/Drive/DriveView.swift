@@ -12,8 +12,10 @@ struct DriveView: View {
         GeometryReader { geometry in
             ZStack(alignment: .topTrailing) {
                 RouteNavigationView(
-                    source: Place.daiNagoyaBuilding,
-                    destination: Place.nadyaPark
+                    destination: CLLocationCoordinate2D(
+                        latitude: fitnessPlan.destinationLatitude,
+                        longitude: fitnessPlan.destinationLongitude
+                    )
                 )
                 
                 if activityIsInProgress {

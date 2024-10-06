@@ -1,10 +1,10 @@
 import SwiftUI
 import MapKit
 
-struct ItemInfoView: View {
+struct DestinationSetButton: View {
+    @Binding var path: AppNavigationPath
     let selectedResult: MKMapItem
     let route: MKRoute?
-    @State private var lookAroundScene: MKLookAroundScene?
     
     private var travelTime: String? {
         guard let route else { return nil }
@@ -14,17 +14,19 @@ struct ItemInfoView: View {
         return formatter.string(from: route.expectedTravelTime)
     }
     
-    func getLookAroundScene() {
-        lookAroundScene = nil
-        Task {
-            let request = MKLookAroundSceneRequest(mapItem: selectedResult)
-            lookAroundScene = try? await request.scene
-        }
-    }
-    
     var body: some View {
         Button {
-            
+            let plan = FitnessPlan(
+                destinationName: selectedResult.name ?? "",
+                destinationLatitude: selectedResult.placemark.coordinate.latitude,
+                destinationLongitude: selectedResult.placemark.coordinate.longitude,
+                activities: []
+            )
+            var transaction = Transaction()
+            transaction.disablesAnimations = true
+            withTransaction(transaction) {
+                path.append(.selectActivity(fitnessPlan: plan))
+            }
         } label: {
             RoundedRectangle(cornerRadius: 18)
                 .fill(.green)
@@ -40,12 +42,6 @@ struct ItemInfoView: View {
                         ProgressView()
                     }
                 }
-        }
-        .onAppear {
-            getLookAroundScene()
-        }
-        .onChange(of: selectedResult) {
-            getLookAroundScene()
         }
     }
 }

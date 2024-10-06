@@ -3,12 +3,12 @@ import MapKit
 
 
 struct RouteNavigationView: View {
-    let source: MKMapItem
-    let destination: MKMapItem
+    let destination: CLLocationCoordinate2D
     @State private var position: MapCameraPosition = .automatic
     @State private var route: MKRoute?
     @State private var coordinates: [CLLocationCoordinate2D] = []
     @State private var startCoordinate: CLLocationCoordinate2D?
+    @ObservedObject private var locationManager = LocationManager()
     
     var body: some View {
         Map(position: $position) {
@@ -22,23 +22,17 @@ struct RouteNavigationView: View {
                     .foregroundStyle(.white.opacity(0.7))
             }
             
-            ForEach(Array(coordinates.dropFirst().enumerated()), id: \.offset) { offset, coordinate in
-                Annotation("", coordinate: coordinate, anchor: .bottom) {
-                    Image(systemName: "bubble.middle.bottom.fill")
-                        .font(.largeTitle)
-                        .overlay {
-                            Text("\(offset + 1)").foregroundStyle(.black).offset(y: -3)
-                        }
-                }
-            }
             if let route {
                 MapPolyline(route)
                     .stroke(.blue, lineWidth: 5)
             }
         }
         .mapStyle(.standard(elevation: .flat))
-        .onAppear {
-            getDirections()
+        .onChange(of: locationManager.coordinate) { oldValue, newValue in
+            if oldValue != nil { return }
+            if route != nil { return }
+            guard let currentLocation = newValue else { return }
+            getDirections(from: currentLocation)
         }
         .preferredColorScheme(.dark)
     }
@@ -51,10 +45,11 @@ struct RouteNavigationView: View {
         return result
     }
     
-    private func getDirections() {
+    private func getDirections(from source: CLLocationCoordinate2D) {
         let request = MKDirections.Request()
-        request.source = source
-        request.destination = destination
+        
+        request.source = MKMapItem(placemark: .init(coordinate: source))
+        request.destination = MKMapItem(placemark: .init(coordinate: destination))
         
         Task {
             let directions = MKDirections(request: request)
@@ -80,21 +75,9 @@ struct RouteNavigationView: View {
 
 #Preview {
     RouteNavigationView(
-        source: MKMapItem(
-            placemark: MKPlacemark(
-                coordinate: CLLocationCoordinate2D(
-                    latitude: 35.172054987155555,
-                    longitude: 136.88456594373685
-                )
-            )
-        ),
-        destination: MKMapItem(
-            placemark: MKPlacemark(
-                coordinate: CLLocationCoordinate2D(
-                    latitude: 35.165644999461755,
-                    longitude: 136.90506350950815
-                )
-            )
+        destination: CLLocationCoordinate2D(
+            latitude: 35.165644999461755,
+            longitude: 136.90506350950815
         )
     )
 }

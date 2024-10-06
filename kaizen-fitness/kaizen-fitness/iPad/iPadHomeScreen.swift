@@ -2,7 +2,8 @@ import SwiftUI
 import Combine
 
 enum AppPath: Hashable {
-    case selectPlan
+    case selectDestination
+    case selectActivity(fitnessPlan: FitnessPlan)
     case drive(fitnessPlan: FitnessPlan)
 }
 
@@ -14,7 +15,7 @@ struct iPadHomeScreen: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            SelectActivityView(path: $path)
+            SelectDestinationView(path: $path)
                 .navigationDestination(for: AppPath.self, destination: destination)
         }
         .onAppear {
@@ -37,8 +38,11 @@ struct iPadHomeScreen: View {
     @ViewBuilder
     func destination(appPath: AppPath) -> some View {
         switch appPath {
-        case .selectPlan:
-            SelectActivityView(path: $path)
+        case .selectDestination:
+            SelectDestinationView(path: $path)
+        case .selectActivity(let fitnessPlan):
+            SelectActivityView(path: $path, fitnessPlan: fitnessPlan)
+                .navigationBarBackButtonHidden(true)
         case .drive(let fitnessPlan):
             DriveView(fitnessPlan: fitnessPlan)
                 .navigationBarBackButtonHidden(true)
